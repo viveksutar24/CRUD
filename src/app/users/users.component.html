@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="col-lg-12">
+
+    <h1>Users</h1>
+
+  </div>
+
+  <div class="col-lg-12">
+
+    <table class="table table-bordered">
+
+      <tr class="bg-success">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Avatar</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>City</th>
+      </tr>
+
+
+      <tr class="bg-warning" *ngFor="let user of users; let i = index;">
+        <td>
+          <button routerLink="users/{{user.id}}" class="btn btn-outline-primary">Edit</button>
+          <button (click)="deleteuser( user.id )" class="btn btn-outline-danger">Delete</button>
+        </td>
+        <td>{{ i+1 }}</td>
+        <!-- <td>{{user.id}}</td> -->
+        <td>{{user.name}}</td>
+        <td><img src="{{user.avatar}}" alt=""></td>
+        <td>{{ user.mobileno }}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
